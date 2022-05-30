@@ -1,0 +1,26 @@
+{
+  "name": "practice-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "practice": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "assert": "^2.0.0",
+    "body-parser": "^1.20.0",
+    "bson": "^4.6.4",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "mime": "^3.0.0",
+    "mongodb": "^4.6.0"
+  },
+  "devDependencies": {
+    "minimist": "^1.2.6",
+    "nodemon": "^2.0.16"
+  }
+}

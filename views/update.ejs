@@ -1,0 +1,40 @@
+<!-- update me -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CRUD</title>
+  <script src="https://kit.fontawesome.com/d60e865119.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+  <header>
+    <h1><a href='/'>WHAT THE CRUD!?</a></h1>
+    <span>Let's get some practice in</span>
+
+    <ul>
+      <li class="nav"><a href='/post'>POST</a></li>
+      <li class="nav"><a href='/update'>UPDATE</a></li>
+      <li class="nav"><a href='/delete'>DELETE</a></li>
+    </ul>
+  </header>
+    
+  <main>
+    <ul class="delOne">
+    <% for(var i=0; i<info.length; i++) {%>
+        <li class="info">
+            <span><%= info[i].name %></span>
+            <span><%= info[i].element %></span>
+            <span><%= info[i].style %></span>
+            <span><i class="fa-solid fa-wrench"></i></i></span>
+        </li>
+    <% } %>
+    </ul>
+
+  </main>
+
+  <script src="main2.js"></script> 
+  </body>
+  </html>
+  

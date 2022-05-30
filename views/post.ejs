@@ -1,0 +1,75 @@
+<!-- post me -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href='/'>WHAT THE CRUD!?</a></h1>
+        <span>Let's get some practice in</span>
+    
+        <ul>
+            <li class="nav"><a href='/post'>POST</a></li>
+            <li class="nav"><a href='/update'>UPDATE</a></li>
+            <li class="nav"><a href='/delete'>DELETE</a></li>
+        </ul>
+      </header>
+
+    <form action="/order" method="post">
+        
+            <input type="text" placeholder="Name" name="name">
+
+        <section>    
+            <label for="Earth">Earth</label>
+            <input type="radio" name="element"  value="Heavy">
+
+            <label for="Fire">Fire</label>
+            <input type="radio" name="element" value="Burning">
+
+            <label for="Water">Water</label>
+            <input type="radio" name="element" value="Flowing">
+
+            <label for="Air">Air</label>
+            <input type="radio" name="element" value="Breathing">
+        </section>
+
+        <section>
+            <label for="Black Pearls">Slice</label>
+            <input type="radio" name="style" value="Knife Hand">
+
+            <label for="Popping Pearls">Smash</label>
+            <input type="radio" name="style" value="Fist">
+
+            <label for="Fruit Jelly">Swift</label>
+            <input type="radio" name="style" value="Kick">
+
+            <label for="Cut Fruit">Push</label>
+            <input type="radio" name="style" value="Palm">
+        </section>
+        
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <main>
+        <ul class="infoBox">
+        <% for(var i=0; i<info.length; i++) {%>
+            <li class="info">
+                <span><%= info[i].name %></span>
+                <span><%= info[i].element %></span>
+                <span><%= info[i].style %></span>
+            </li>
+        <% } %>
+        </ul>
+    
+      </main>
+
+
+
+    <script src="main.js"></script>
+  </body>
+  </html>
