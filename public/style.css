@@ -48,3 +48,7 @@ form {
 .checked {
     text-decoration: line-through 2px black;
 }
+
+.popUp {
+    display: none;
+}

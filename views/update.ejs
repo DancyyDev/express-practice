@@ -23,11 +23,43 @@
   <main>
     <ul class="delOne">
     <% for(var i=0; i<info.length; i++) {%>
-        <li class="info">
+        <li class="<%=info[i]._id %>">
             <span><%= info[i].name %></span>
             <span><%= info[i].element %></span>
             <span><%= info[i].style %></span>
             <span><i class="fa-solid fa-wrench"></i></i></span>
+
+        <form action="/updateThat" method="post" class="popUp">
+              <input type="hidden" name="practiceId"  value="<%=info[i]._id %>">
+
+              <label for="Earth">Earth</label>
+              <input type="radio" name="element"  value="Heavy">
+  
+              <label for="Fire">Fire</label>
+              <input type="radio" name="element" value="Burning">
+  
+              <label for="Water">Water</label>
+              <input type="radio" name="element" value="Flowing">
+  
+              <label for="Air">Air</label>
+              <input type="radio" name="element" value="Breathing">
+          </section>
+  
+          <section>
+              <label for="Black Pearls">Slice</label>
+              <input type="radio" name="style" value="Knife Hand">
+  
+              <label for="Popping Pearls">Smash</label>
+              <input type="radio" name="style" value="Fist">
+  
+              <label for="Fruit Jelly">Swift</label>
+              <input type="radio" name="style" value="Kick">
+  
+              <label for="Cut Fruit">Push</label>
+              <input type="radio" name="style" value="Palm">
+          </section>
+          <button type="submit">Submit</button>
+        </form>
         </li>
     <% } %>
     </ul>

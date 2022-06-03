@@ -1,23 +1,6 @@
 console.log('hello')
 let update = document.querySelector('.infoBox')
 
-update.addEventListener('click', _ => {
-  console.log(e.target)
-  fetch('/update', {
-    method: 'put',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      'name': '////////',
-      'Element': '/////////',
-      'Style': '////////'
-    })
-  }).then(res => {
-    if (res.ok) return res.json()
-  })
-  .then(response => {
-    window.location.reload(true)
-  })
-})
 
 
 // update.addEventListener('click', checked)

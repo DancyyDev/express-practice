@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
+const {ObjectId} = require('mongodb')
 
 var db
 
@@ -38,6 +39,9 @@ app.get('/post', (req, res) => {
     
 })
 
+// ////////////////
+// Update
+
 app.get('/update', (req, res) => {
     db.collection('info').find().toArray((err, result) => {
         if (err) return console.log(err)
@@ -45,17 +49,14 @@ app.get('/update', (req, res) => {
     })
 })
 
-app.put('/update' , (req, res) => {
+app.post('/updateThat' , (req, res) => {
     db.collection('info').findOneAndUpdate(
         { 
-            name: req.body.name,
-            element: req.body.element,
-            style: req.body.style 
+           _id : ObjectId( req.body.practiceId)   
         },
         { $set: {
-            name: 'chicken',
-            element: 'chicken',
-            style: 'chicken'
+            element: req.body.element,
+            style: req.body.style
         }   
     },
     {
@@ -63,27 +64,28 @@ app.put('/update' , (req, res) => {
         upsert: true
     }, (err, result) => {
         if (err) return res.send(err)
-        res.send(result)
+        res.redirect('/update')
     })
 })
+
+// Delete
+// ///////////////////////
 
 app.get('/delete', (req, res) => {
     db.collection('info').find().toArray((err, result) => {
         if (err) return console.log(err)
         res.render('delete.ejs', {info: result})
-      })
-    
+    })
 })
 
 app.delete('/deleteThat', (req, res) => {
     db.collection('info').findOneAndDelete(
       {
-        name: req.body.name,
-        element: req.body.element,
-        style: req.body.style
+        _id : ObjectId( req.body._id)
       }, (err, result) => {
       if (err) return res.send(500, err)
-      res.send('Message deleted!')
+      console.log('Deleted!')
+      res.send(result)
     })
   })
 
